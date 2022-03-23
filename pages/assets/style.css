@@ -1,0 +1,124 @@
+/* * {
+  font-family: system-ui;
+} */
+details p {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 10px;
+}
+
+/* Pink Light scheme (Default) */
+/* Can be forced with data-theme="light" */
+[data-theme='light'],
+:root:not([data-theme='dark']) {
+  /* --primary: #d81b60; */
+  --primary: #ee719a;
+  --primary-hover: #ffa7c4;
+  --primary-focus: rgba(216, 27, 96, 0.125);
+  --primary-inverse: #fff;
+  --code-tag-color: #ee719a;
+}
+
+/* Pink Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --primary: #ee719a;
+    --primary-hover: #ffa7c4;
+    --primary-focus: rgba(216, 27, 96, 0.25);
+    --primary-inverse: #fff;
+    --code-tag-color: #ee719a;
+  }
+}
+
+/* Pink Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme='dark'] {
+  --primary: #ee719a;
+  --primary-hover: #ffa7c4;
+  --primary-focus: rgba(216, 27, 96, 0.25);
+  --primary-inverse: #fff;
+  --code-tag-color: #ee719a;
+}
+
+/* Pink (Common styles) */
+:root {
+  --form-element-active-border-color: var(--primary);
+  --form-element-focus-color: var(--primary-focus);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --del-color: #4e6272;
+  --code-tag-color: #ee719a;
+}
+
+@media (min-width: 1200px) {
+  body > header,
+  body > main,
+  body > footer {
+    max-width: 920px;
+  }
+}
+
+body > header {
+  margin-top: 2rem;
+  padding: 0;
+}
+
+footer {
+  vertical-align: middle;
+}
+
+footer > small {
+  margin-left: 0.5rem;
+  color: var(--muted-color);
+}
+
+footer > a,
+footer > [role='link'] {
+  --color: var(--secondary);
+}
+footer > a:is([aria-current], :hover, :active, :focus),
+footer > [role='link']:is([aria-current], :hover, :active, :focus) {
+  --color: var(--secondary-hover);
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.info .avatar {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 2.8rem;
+  overflow: hidden;
+}
+.info > div {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.iconfont.icon-moon {
+  cursor: pointer;
+  color: #bbc6ce;
+}
+.iconfont.icon-sun {
+  cursor: pointer;
+  color: #415462;
+}
+
+.container {
+  max-width: 920px;
+}
