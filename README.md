@@ -4,27 +4,37 @@
 
 A simple static site genertor, convert md posts to html.
 
-`cargo run -- build` to build pages
-`cargo run -- serve` to build pages
-
 - Read /pages markdown files
 - Parse md to html by [pulldown cmark](https://docs.rs/pulldown-cmark/latest/pulldown_cmark/)
 - Render into [tera template](https://github.com/Keats/tera)
 - styled by [picocss](https://picocss.com/) and [highlightjs](https://highlightjs.org/)
 
-### structure
+#### Online demo
+
+[My blog](https://blog.nexts.top)
+
+### Usage
+
+clone this repo, and:
+`cargo run -- build` to build pages
+`cargo run -- serve` to build pages
+
+### Structure
 
 - `/pages`: markdown source file
   - `index.md` => _index page_
   - `/posts/*.md` => _post page_
-  - `/assets` img/css ...
+  - `/image` images used in markdown file
+- `/dist`: generated site
+- `/static`: static resources
+  - `/assets`: img/css/font
   - `/favicon` favicon files
-- `/dist`: static stie pages
 - `/src`: rust src
 
-### todo
+### Todo
 
-- [ ] site init
+- [ ] site initialize to new path
+- [ ] site config file
 - [x] css style
 - [x] add command line
 - [x] serve /dist

@@ -8,18 +8,4 @@ tags:
 
 # hello world
 
-## hello world
-
-### hello world
-
-#### hello world
-
-hello world
-
-> hello world
-
-```
-hello world
-```
-
-123abc
+![cat](../image/cat.jpg)
