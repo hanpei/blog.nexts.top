@@ -7,7 +7,7 @@ tags:
 
 # 实现 MyNew 方法
 
-今天摸鱼看到了这个 repo  
+今天摸鱼看到了这个 repo:  
 [https://github.com/BetaSu/fe-hunter/issues/15](https://github.com/BetaSu/fe-hunter/issues/15)
 
 > **要实现的功能**  
