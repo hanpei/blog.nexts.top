@@ -1,17 +1,16 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: deploy to tencent cvm
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches: 
+      - master
+    paths-ignore:
+      - README.md
+  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,8 +28,31 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # 安装使用 node:10
+      - name: use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+            node-version: 16
+      # 运行命令，npm install && npm run build
+      - name: cargo install and build
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+            cargo install onepage
+            onepage build
+        env:
+            CI: true
+      # 部署到腾讯云服务器
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@v2.0.7
+        env:
+            # 本地.ssh文件下的私钥id_rsa，存在secrets的TOKEN中
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            # 复制操做的参数。"-avzr --delete"意味部署时清空服务器目标目录下的文件
+            ARGS: '-avzr --delete'
+            # 源目录，相对于$GITHUB_WORKSPACE根目录的路径
+            SOURCE: 'dist/'
+            # 服务器域名
+            REMOTE_HOST: ${{ secrets.SSH_HOST }}
+            # 腾讯云默认用户名为root
+            REMOTE_USER: ${{ secrets.SSH_USERNAME }}
+            # 目标目录
+            TARGET: '/var/www/blog'
