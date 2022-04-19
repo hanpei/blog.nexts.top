@@ -14,11 +14,11 @@ tags:
 
 具体实现其实更像是发现各种合适的`rust crate`，然后把他们串联起来：
 
-- Load files in direction by [walkdir](https://crates.io/crates/walkdir)
-- Parse md to html by [pulldown cmark](https://docs.rs/pulldown-cmark/latest/pulldown_cmark/)
-- Render into [tera template](https://github.com/Keats/tera)
-- styled by [picocss](https://picocss.com/) and [highlightjs](https://highlightjs.org/)
-- Create your command-line by [clap](https://crates.io/crates/clap)
+- 读取目录下的 markdown 文件 [walkdir](https://crates.io/crates/walkdir)
+- 将 md 文件转化成 html 格式 [pulldown cmark](https://docs.rs/pulldown-cmark/latest/pulldown_cmark/)
+- 将 html 作为 content 写入模板引擎 [tera template](https://github.com/Keats/tera)
+- 引入样式 [picocss](https://picocss.com/) and [highlightjs](https://highlightjs.org/)
+- 命令行工具 [clap](https://crates.io/crates/clap)
 
 ## 简单实现步骤
 
