@@ -1,4 +1,6 @@
-# SOUL INJECTION
+赐予我力量吧啊啊
+
+## SOUL INJECTION
 
 ### _[JUST RUN](https://running.nexts.top/)_
 
