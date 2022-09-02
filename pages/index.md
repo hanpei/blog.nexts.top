@@ -1,6 +1,4 @@
-赐予我力量吧啊啊
-
-## SOUL INJECTION
+# SOUL INJECTION
 
 ### _[JUST RUN](https://running.nexts.top/)_
 
@@ -8,3 +6,7 @@
 想去霞慕尼，去跑 UTMB。
 
 ---
+
+### Wish List
+
+- ✅ 2022 崇礼DTC 100km  🎉🎉🎉 
